@@ -1,1 +1,31 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laprass.ProdutosPage"
+             Title="ProdutosPage">
+
+    <VerticalStackLayout Padding="10" Spacing="15">
+
+        <Label Text="Nossos Produtos"
+               FontSize="26"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="DarkBlue"/>
+
+        <CollectionView x:Name="ProdutosCollection">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="LightGray" CornerRadius="10" Padding="10" Margin="5">
+                        <HorizontalStackLayout Spacing="15">
+                            <Image Source="{Binding Imagem}" WidthRequest="60" HeightRequest="60"/>
+                            <VerticalStackLayout>
+                                <Label Text="{Binding Nome}" FontSize="18" FontAttributes="Bold"/>
+                                <Label Text="{Binding Preco}" TextColor="DarkGreen"/>
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
 
